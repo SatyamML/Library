@@ -8,10 +8,10 @@ class Library:
 
     def borrowBook(self, BookName):
         if BookName in self.books:
-            print("You sucessfully borrowed the book {}".format(BookName))
+            print(f"You sucessfully borrowed the book {BookName}")
             self.books.remove(BookName)
         else:
-            print("The book {} is not present try ot acces it later".format(BookName))
+            print(f"The book {BookName} is not present try ot acces it later")
 
     def returnBook(self, ReBooks) :
         print(f"you book {ReBooks} have been sucessfully returned")
@@ -27,7 +27,7 @@ class Student:
         return self.ret
     
 if __name__=="__main__":
-    centrallibrary=Library(["Django", "Python", "Flask", "Pandas"])
+    centrallibrary=Library(["Django", "Python", "Flask", "Pandas","Machine Learning"])
     student=Student()
 
     while(True):
@@ -36,7 +36,7 @@ if __name__=="__main__":
         1. list of all the books ----> press 1
         2. Request a Book ----> press 2
         3. Return the Book ----> press 3
-        4. To close the library
+        4. To close the library ---> press 4
         '''
 
         print(a)
@@ -48,7 +48,7 @@ if __name__=="__main__":
             centrallibrary.borrowBook(student.requestBook())
         elif message==3:
             centrallibrary.returnBook(student.returnBook())
-        else:
+        elif messsage==4:
             exit()
 
         
